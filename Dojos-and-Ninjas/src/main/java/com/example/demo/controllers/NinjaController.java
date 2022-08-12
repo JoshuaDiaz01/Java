@@ -43,7 +43,7 @@ public class NinjaController {
 			model.addAttribute("allDojos", dojoServ.getAll());
 			return "ninjas.jsp";
 		}
-		ninjaServ.save(newNinja);
+		ninjaServ.save(newNinja);  
 		return "redirect:/ninjas";
 	}
 	
