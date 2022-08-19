@@ -59,7 +59,7 @@ public class User {
     
 	//relationships one user to many books
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Book> books;
+	private List<Course> courses;
     
   
     public User() {}
@@ -152,12 +152,12 @@ public class User {
 		this.updatedAt = updatedAt;
 	}
 
-	public List<Book> getBooks() {
-		return books;
+	public List<Course> getCourses() {
+		return courses;
 	}
 
-	public void setBooks(List<Book> books) {
-		this.books = books;
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
 	}
 
 

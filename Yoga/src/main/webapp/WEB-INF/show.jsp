@@ -12,17 +12,16 @@
     </head>
 <body>
 
-<a href="/welcome">Back to the shelves!</a>
+<a href="/welcome">Back to Course Dashboard!</a>
 
-<h1><c:out value="${ book.title }" /></h1>
+<h1><c:out value="${ course.name }"/> with <c:out value="${ course.user.firstName }" /></h1>
 
-<h2><c:out value="${ book.user.firstName }"/> read <c:out value="${ book.title }"/> by <c:out value="${ book.author }"/>.</h2>
-<h2>Here are <c:out value="${ book.user.firstName }"/>'s thoughts.</h2>
-----------------------------------------------------
+<h2>Day: <c:out value="${ course.day }"/></h2>
 <div></div>
-<c:out value="${ book.comment }"/>
+<h2>Price: $<c:out value="${ course.price }"/></h2>
 <div></div>
-----------------------------------------------------
+<h2>Description: <c:out value="${ course.comment }"/></h2>
+
 
 <c:if test = "${book.user.id == user.id}"> 
 <a href = "/books/${bookId}/edit">Edit Book</a>

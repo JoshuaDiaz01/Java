@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page isErrorPage="true" %>
@@ -6,11 +8,12 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
-<title>Login And Registration</title>
+<title>Read Share</title>
 </head>
 <body>
 
-<h1>Welcome!</h1>
+<h1>Book Club</h1>
+<p>A place for friends to share thoughts on books.</p>
 
 <form:form action="/register" method="post" modelAttribute="newUser">
 
@@ -22,17 +25,10 @@
 	    </thead>
 	    <thead>
 	    	<tr>
-	            <td class="float-left">First Name:</td>
+	            <td class="float-left">User Name:</td>
 	            <td class="float-left">
-	            	<form:errors path="firstName" class="text-danger"/>
-					<form:input class="input" path="firstName"/>
-	            </td>
-	        </tr>
-	        <tr>
-	            <td class="float-left">Last Name:</td>
-	            <td class="float-left">
-	            	<form:errors path="lastName" class="text-danger"/>
-					<form:input class="input" path="lastName"/>
+	            	<form:errors path="userName" class="text-danger"/>
+					<form:input class="input" path="userName"/>
 	            </td>
 	        </tr>
 	        <tr>
@@ -46,14 +42,14 @@
 	            <td class="float-left">Password:</td>
 	            <td class="float-left">
 	            	<form:errors path="password" class="text-danger"/>
-					<form:input class="input" path="password" type = "password"/>
+					<form:input class="input" path="password"/>
 	            </td>
 	        </tr>
 	        <tr>
 	            <td class="float-left">Confirm PW:</td>
 	            <td class="float-left">
 	            	<form:errors path="confirm" class="text-danger"/>
-					<form:input class="input" path="confirm" type = "password"/>
+					<form:input class="input" path="confirm"/>
 	            </td>
 	        </tr>
 	        <tr>
@@ -83,7 +79,7 @@
 	            <td class="float-left">Password:</td>
 	            <td class="float-left">
 	            	<form:errors path="password" class="text-danger"/>
-					<form:input class="input" path="password" type = "password"/>
+					<form:input class="input" path="password"/>
 	            </td>
 	        </tr>
 	        <tr>

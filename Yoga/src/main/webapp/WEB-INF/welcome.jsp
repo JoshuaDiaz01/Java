@@ -17,38 +17,44 @@
 </head>
 <body>
 
-<h3>Welcome, <c:out value="${user.firstName}"></c:out>!</h3>
-<p>Books from everyone's shelf</p>
+<h3>Namaste, <c:out value="${user.firstName}"></c:out>!</h3>
+<h1>Course Dashboard</h1>
 <p><a href="/logout">logout</a></p>
-<p><a href="/books">+ Add a book to your shelf</a></p>
 
-<h1>Books from everyones shelves</h1>
+
 
 <table>
 	<thead>
 		<tr>
-			<th>Id</th>
-			<th>Title</th>
-			<th>Author name</th>
-			<th>Posted By</th>
+			<th>Class Name</th>
+			<th>Instructor</th>
+			<th>Weekday</th>
+			<th>Price</th>
 		</tr>
 	</thead>
 	
 	<tbody>
 	
 
-		<c:forEach var="book" items="${ allBooks }">
+		<c:forEach var="course" items="${ allCourses }">
 				<tr scope="row">
-					<td><a href = "/books/${book.id}"><c:out value="${ book.id }"/></a></td>
-					<td><c:out value="${ book.title }" /></td>
-					<td><c:out value="${ book.author }" /></td>
-					<td><c:out value="${ book.user.firstName }" /></td>
+					
+					<td>
+						<a href = "/courses/${course.id}"><c:out value="${ course.name }"/></a>
+						<c:if test = "${course.user.id == user.id}"> 
+							<a href = "/courses/${course.id}/edit">Edit Course</a>
+						</c:if> 
+					</td>
+					<td><c:out value="${ course.user.firstName }" /></td>
+					<td><c:out value="${ course.day }" /></td>
+					<td><c:out value="${ course.price }" /></td>
 				</tr>
 		</c:forEach>
 	
 	</tbody>
 	
 </table>
+<p><a href="/courses">+ new course</a></p>
    	
    	
    	
